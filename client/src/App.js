@@ -5,6 +5,7 @@ import {
   createHttpLink,
   ApolloConsumer,
 } from "@apollo/client";
+
 import React from "react";
 
 import Home from "./pages/Home";

@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
-import { QUERIES } from "../utils/queries";
+import { GET_USERS } from "../utils/queries";
 import React from "react";
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERIES.GET_USERS);
+  const { loading, data } = useQuery(GET_USERS);
   console.log(data?.users);
   return (
     <main>
