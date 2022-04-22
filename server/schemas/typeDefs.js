@@ -26,7 +26,6 @@ const typeDefs = gql`
     date: String
     time: String
     location: String
-    attendees: [Dog]
   }
 
   type Auth {
