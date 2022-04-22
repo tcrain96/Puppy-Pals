@@ -18,6 +18,7 @@ const typeDefs = gql`
     age: String
     gender: String
     description: String
+    neuteredOrSpayed: Boolean
   }
 
   type Event {
@@ -37,7 +38,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     dogs: [Dog]
-    dog(name: String): Dog
+    dog(_id: ID!): Dog
     events: [Event]
     event(_id: ID!): Event
   }
@@ -52,18 +53,21 @@ const typeDefs = gql`
       age: String!
       gender: String!
       description: String!
+      neuteredOrSpade: Boolean!
     ): Dog
     updateDog(
       name: String
       age: String
       gender: String
       description: String
+      neuteredOrSpade: Boolean
     ): Dog
     deleteDog(
       name: String
       age: String
       gender: String
       description: String
+      neuteredOrSpade: Boolean!
     ): Dog
     addEvent(date: String!, time: String!, location: String!): Event
     updateEvent(date: String, time: String, location: String): Event

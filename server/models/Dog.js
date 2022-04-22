@@ -18,6 +18,10 @@ const dogSchema = new Schema({
     type: String,
     required: true,
   },
+  neuteredOrSpade: {
+    type: Boolean,
+    required: true,
+  },
 });
 
 const Dog = model("Dog", dogSchema);
