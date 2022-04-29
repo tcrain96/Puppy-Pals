@@ -8,8 +8,6 @@ import {
 
 import React from "react";
 
-import Home from "./pages/Home";
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -22,11 +20,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <div className="container">
-          <Home />
-        </div>
-      </div>
+      <main></main>
     </ApolloProvider>
   );
 }
