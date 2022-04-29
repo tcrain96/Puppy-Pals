@@ -1,10 +1,10 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { Thought, User } = require('../models');
+const { Dog, User } = require('../models');
 
 db.once('open', async () => {
-  await Thought.deleteMany({});
+  await Dog.deleteMany({});
   await User.deleteMany({});
 
   // create user data
@@ -20,56 +20,62 @@ db.once('open', async () => {
 
   const createdUsers = await User.collection.insertMany(userData);
 
-  // create friends
+
+  // create Dogs
   for (let i = 0; i < 100; i += 1) {
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { _id: userId } = createdUsers.ops[randomUserIndex];
 
-    let friendId = userId;
+    let dogId = userId;
 
-    while (friendId === userId) {
+    while (dogId === userId) {
       const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-      friendId = createdUsers.ops[randomUserIndex];
+      dogId = createdUsers.ops[randomUserIndex];
     }
 
-    await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
+    await User.updateOne({ _id: userId }, { $addToSet: { dogs: dogId } });
   }
 
-  // create thoughts
-  let createdThoughts = [];
-  for (let i = 0; i < 100; i += 1) {
-    const thoughtText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-    const createdThought = await Thought.create({ thoughtText, username });
 
-    const updatedUser = await User.updateOne(
-      { _id: userId },
-      { $push: { thoughts: createdThought._id } }
-    );
+// create Event
 
-    createdThoughts.push(createdThought);
-  }
 
-  // create reactions
-  for (let i = 0; i < 100; i += 1) {
-    const reactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+for (let i = 0; i < 50; i += 1) {
+  const date = faker.internet.date();
+  const time= faker.internet.time(username);
+  const location = faker.internet.location();
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username } = createdUsers.ops[randomUserIndex];
+  userData.push({ date, time, location });
+}
 
-    const randomThoughtIndex = Math.floor(Math.random() * createdThoughts.length);
-    const { _id: thoughtId } = createdThoughts[randomThoughtIndex];
 
-    await Thought.updateOne(
-      { _id: thoughtId },
-      { $push: { reactions: { reactionBody, username } } },
-      { runValidators: true }
-    );
-  }
+const createdEvent = await Event.create({date, time, location});
 
-  console.log('all done!');
+const updatedUser = await User.updateOne(
+  { _id: userId },
+  { $push: { event: createdEvent._id } }
+);
+
+createdEvents.push(createdEvent);
+}
+
+
+
+console.log('all done!');
   process.exit(0);
 });
+
+
+
+
+
+
+
+
+
+ 
+
+
+
