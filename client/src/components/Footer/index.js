@@ -1,10 +1,11 @@
 import React from "react";
+import "./index.css";
 
 const Footer = () => {
   return (
-    <div className="flex-row justify-space-between">
-      <div className="col-12 mb-3">I am the Footer</div>
-    </div>
+    <footer>
+      <h2>All Rights Reserved | Puppy Pals Team</h2>
+    </footer>
   );
 };
 
