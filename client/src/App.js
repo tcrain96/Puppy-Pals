@@ -21,6 +21,8 @@ import NoMatch from "./pages/NoMatch";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import Auth from "./utils/auth";
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -45,18 +47,25 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="main-container">
-          <Header />
+          {Auth.loggedIn() ? <Header /> : null}
+
           <div className="container">
-            <Switch>
-              <Route exact path="/" component={Login} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/profile/:username?" component={Profile} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="*" component={NoMatch} />
-            </Switch>
+            {Auth.loggedIn() ? (
+              <Switch>
+                <Route exact path="/" component={Dashboard} />
+                <Route exact path="/login" component={Dashboard} />
+                <Route exact path="/signup" component={Dashboard} />
+                <Route exact path="/profile/:username?" component={Profile} />
+                <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="*" component={NoMatch} />
+              </Switch>
+            ) : (
+              <Switch>
+                <Route exact path="*" component={Login} />
+              </Switch>
+            )}
           </div>
-          <Footer />
+          {Auth.loggedIn() ? <Footer /> : null}
         </div>
       </Router>
     </ApolloProvider>
