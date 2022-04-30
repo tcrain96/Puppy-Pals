@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import Auth from "../../utils/auth";
+import logo from "../../assets/horizontal-logo.png";
 
 const Header = () => {
   const logout = (event) => {
@@ -11,7 +12,7 @@ const Header = () => {
   return (
     <header>
       <Link to="/dashboard" style={{ textDecoration: "none" }}>
-        <h1>Puppy Pals</h1>
+        <img src={logo} alt="puppy-pals logo" className="horizontal-logo"></img>
       </Link>
 
       <nav>
