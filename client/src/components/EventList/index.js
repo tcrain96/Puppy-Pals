@@ -1,4 +1,7 @@
 import React from "react";
+import "./index.css";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME_BASIC } from "../../utils/queries";
 
 const EventList = ({ events }) => {
   if (!events.length) {
@@ -6,7 +9,7 @@ const EventList = ({ events }) => {
   }
 
   return (
-    <section>
+    <section className="event-list-section">
       {events &&
         events.map((event) => (
           <article key="event._id">
