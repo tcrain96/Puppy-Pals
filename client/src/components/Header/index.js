@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
+import Auth from "../../utils/auth";
 
 const Header = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <header>
       <Link to="/dashboard" style={{ textDecoration: "none" }}>
@@ -10,17 +15,28 @@ const Header = () => {
       </Link>
 
       <nav>
-        <>
-          <Link to="/dashboard" style={{ textDecoration: "none" }}>
-            <p>Dashboard</p>
-          </Link>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
-            <p>Profile</p>
-          </Link>
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <p>Login</p>
-          </Link>
-        </>
+        {Auth.loggedIn() ? (
+          <>
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>
+              <p>Dashboard</p>
+            </Link>
+            <Link to="/profile" style={{ textDecoration: "none" }}>
+              <p>Profile</p>
+            </Link>
+            <a href="/login" onClick={logout}>
+              Logout
+            </a>
+          </>
+        ) : (
+          <>
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>
+              <p>Dashboard</p>
+            </Link>
+            <Link to="/profile" style={{ textDecoration: "none" }}>
+              <p>Profile</p>
+            </Link>
+          </>
+        )}
       </nav>
     </header>
   );
