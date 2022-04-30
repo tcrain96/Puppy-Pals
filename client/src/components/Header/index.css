@@ -1,0 +1,30 @@
+:root {
+  --dark-grey: #2b2d42;
+  --text-color: #edf2f4;
+  --accent-color: #44af69;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 200px;
+  background-color: var(--dark-grey);
+  margin-bottom: 300px;
+}
+
+nav {
+  display: flex;
+}
+
+header h1,
+header p {
+  color: var(--text-color);
+  margin: 25px;
+}
+
+header h1:hover,
+header p:hover {
+  color: var(--accent-color);
+  margin: 25px;
+}

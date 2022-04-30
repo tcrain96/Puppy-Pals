@@ -1,0 +1,18 @@
+:root {
+  --dark-grey: #2b2d42;
+  --text-color: #edf2f4;
+  --accent-color: #44af69;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--dark-grey);
+}
+
+footer h2 {
+  text-align: center;
+  color: var(--text-color);
+  padding: 25px 0px;
+}
