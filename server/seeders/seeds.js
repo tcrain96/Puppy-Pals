@@ -32,8 +32,6 @@ db.once("open", async () => {
     );
     const dogNeut = true;
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
     const createdDog = await Dog.create({
       name: dogName,
@@ -78,3 +76,16 @@ db.once("open", async () => {
   console.log("all done!");
   process.exit(0);
 });
+
+
+
+
+
+
+
+
+
+ 
+
+
+
