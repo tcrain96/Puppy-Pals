@@ -4,3 +4,12 @@
     font-family:'Times New Roman', Times, serif;
     font-size: 100px;
 }
+
+.text {
+    text-align: center;
+    font-weight: 20;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
