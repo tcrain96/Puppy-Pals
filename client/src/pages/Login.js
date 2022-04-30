@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
-
+import { Link } from "react-router-dom";
+import "./css/login.css";
 import Auth from "../utils/auth";
 
 const Login = (props) => {
@@ -41,37 +42,34 @@ const Login = (props) => {
 
   return (
     <main>
-      <div>
-        <div>
-          <h4>Login</h4>
-          <div>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className="btn d-block w-100" type="submit">
-                Submit
-              </button>
-            </form>
+      <div className="content">
+        <h4>Login</h4>
+        <form onSubmit={handleFormSubmit}>
+          <input
+            className="form-input"
+            placeholder="Your email"
+            name="email"
+            type="email"
+            id="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input"
+            placeholder="******"
+            name="password"
+            type="password"
+            id="password"
+            value={formState.password}
+            onChange={handleChange}
+          />
+          <button className="btn d-block w-100" type="submit">
+            Submit
+          </button>
+          <Link to="/signup">register</Link>
+        </form>
 
-            {error && <div>Login failed</div>}
-          </div>
-        </div>
+        {error && <div>Login failed</div>}
       </div>
     </main>
   );
