@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-
+import { Link } from "react-router-dom";
+import "./css/Signup.css";
 import Auth from "../utils/auth";
+import logo from "../assets/logo.png";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -39,11 +41,11 @@ const Signup = () => {
 
   return (
     <main>
-      <div>
+      <div className="content">
+        <img src={logo} alt="puppy pals logo" className="logo"></img>
         <div>
-          <h4>Sign Up</h4>
-          <div>
-            <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit}>
+            <article className="login-inputs">
               <input
                 className="form-input"
                 placeholder="Your username"
@@ -71,12 +73,16 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button type="submit">Submit</button>
-            </form>
-
-            {error && <div>Signup failed</div>}
-          </div>
+            </article>
+            <article className="login-buttons">
+              <button type="submit">Register</button>
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                <p>Cancel</p>
+              </Link>
+            </article>
+          </form>
         </div>
+        {error && <div>Signup failed</div>}
       </div>
     </main>
   );
