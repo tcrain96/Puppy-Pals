@@ -61,6 +61,7 @@ function App() {
               </Switch>
             ) : (
               <Switch>
+                <Route exact path="/signup" component={Signup} />
                 <Route exact path="*" component={Login} />
               </Switch>
             )}
