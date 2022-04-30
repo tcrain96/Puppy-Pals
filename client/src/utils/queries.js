@@ -95,3 +95,27 @@ export const GET_EVENT = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      dogs {
+        _id
+        name
+        age
+        gender
+        description
+        neuteredOrSpayed
+      }
+      events {
+        _id
+        date
+        time
+        location
+      }
+    }
+  }
+`;
