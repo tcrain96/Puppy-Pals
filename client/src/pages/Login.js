@@ -4,6 +4,7 @@ import { LOGIN } from "../utils/mutations";
 import { Link } from "react-router-dom";
 import "./css/login.css";
 import Auth from "../utils/auth";
+import logo from "../assets/logo.png"
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -40,9 +41,13 @@ const Login = (props) => {
     });
   };
 
+
   return (
     <main>
       <div className="content">
+        <img src={logo}> 
+        
+        </img>
         <h4>Login</h4>
         <form onSubmit={handleFormSubmit}>
           <input
