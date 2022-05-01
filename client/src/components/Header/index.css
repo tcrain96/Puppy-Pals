@@ -10,22 +10,28 @@ header {
   justify-content: space-between;
   padding: 25px 200px;
   background-color: var(--dark-grey);
+  position: sticky;
+  top: 0;
 }
 
 nav {
   display: flex;
+  align-items: center;
 }
 
 header h1,
-header p {
+header p,
+header a {
   color: var(--text-color);
-  margin: 25px;
+  margin: 0px 20px;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 header h1:hover,
-header p:hover {
+header p:hover,
+header a:hover {
   color: var(--accent-color);
-  margin: 25px;
 }
 
 .horizontal-logo {

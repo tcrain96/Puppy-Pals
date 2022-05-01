@@ -46,6 +46,9 @@ const Header = () => {
             <Link to={profileLink} style={{ textDecoration: "none" }}>
               <p>Profile</p>
             </Link>
+            <a href="/login" onClick={logout}>
+              Logout
+            </a>
           </>
         )}
       </nav>
