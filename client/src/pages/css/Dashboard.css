@@ -1,0 +1,48 @@
+.dashboard-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.add-event-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  margin-top: 75px;
+}
+
+.add-event-button {
+  background-color: #2b2d42;
+  text-align: center;
+  padding: 40px;
+  margin-top: 75px;
+  color: white;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.add-event-button:hover {
+  background-color: #44af69;
+  cursor: pointer;
+}
+
+.add-event-buttons {
+  display: flex;
+  align-items: center;
+}
+.add-event-buttons button,
+.add-event-buttons p {
+  font-size: 20px;
+  border: none;
+  margin: 10px;
+  padding: 20px;
+  background-color: #2b2d42;
+  color: white;
+}
+.add-event-buttons button:hover,
+.add-event-buttons p:hover {
+  background-color: #44af69;
+  cursor: pointer;
+}
