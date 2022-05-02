@@ -25,9 +25,9 @@ const resolvers = {
         .populate("events");
     },
 
-    //Get One Users
-    user: async (parents, { username }) => {
-      return User.findOne({ username })
+    //Get One User
+    user: async (parents, { _id }) => {
+      return User.findOne({ _id })
         .select("-__v -password")
         .populate("dogs")
         .populate("events");

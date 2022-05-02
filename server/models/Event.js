@@ -1,6 +1,9 @@
 const { Schema, model } = require("mongoose");
 
 const eventSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+  },
   date: {
     type: String,
     required: true,

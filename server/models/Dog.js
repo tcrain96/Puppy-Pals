@@ -1,6 +1,9 @@
 const { Schema, model } = require("mongoose");
 
 const dogSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+  },
   name: {
     type: String,
     required: "Your dog needs a name!",
@@ -16,10 +19,6 @@ const dogSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
-  },
-  neuteredOrSpade: {
-    type: Boolean,
     required: true,
   },
 });

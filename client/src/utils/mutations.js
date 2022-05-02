@@ -10,14 +10,15 @@ export const LOGIN = gql`
         email
         dogs {
           _id
+          userId
           name
           age
           gender
           description
-          neuteredOrSpayed
         }
         events {
           _id
+          userId
           date
           time
           location
@@ -38,14 +39,15 @@ export const ADD_USER = gql`
         password
         dogs {
           _id
+          userId
           name
           age
           gender
           description
-          neuteredOrSpayed
         }
         events {
           _id
+          userId
           date
           time
           location
@@ -64,14 +66,15 @@ export const UPDATE_USER = gql`
       password
       dogs {
         _id
+        userId
         name
         age
         gender
         description
-        neuteredOrSpayed
       }
       events {
         _id
+        userId
         date
         time
         location
@@ -89,14 +92,15 @@ export const DELETE_USER = gql`
       password
       dogs {
         _id
+        userId
         name
         age
         gender
         description
-        neuteredOrSpayed
       }
       events {
         _id
+        userId
         date
         time
         location
@@ -107,31 +111,32 @@ export const DELETE_USER = gql`
 
 export const ADD_DOG = gql`
   mutation Mutation(
+    $userId: ID!
     $name: String!
     $age: String!
     $gender: String!
     $description: String!
-    $neuteredOrSpade: Boolean!
   ) {
     addDog(
+      userId: $userId
       name: $name
       age: $age
       gender: $gender
       description: $description
-      neuteredOrSpade: $neuteredOrSpade
     ) {
       _id
+      userId
       name
       age
       gender
       description
-      neuteredOrSpayed
     }
   }
 `;
 
 export const UPDATE_DOG = gql`
   mutation Mutation(
+    $userId: ID!
     $name: String
     $age: String
     $gender: String
@@ -139,38 +144,39 @@ export const UPDATE_DOG = gql`
     $description: String
   ) {
     updateDog(
+      userId: $userId
       name: $name
       age: $age
       gender: $gender
-      neuteredOrSpade: $neuteredOrSpade
       description: $description
     ) {
       _id
+      userId
       name
       age
       gender
       description
-      neuteredOrSpayed
     }
   }
 `;
 
 export const DELETE_DOG = gql`
   mutation Mutation(
-    $neuteredOrSpade: Boolean!
+    $userId: ID!
     $name: String
     $age: String
     $gender: String
     $description: String
   ) {
     deleteDog(
-      neuteredOrSpade: $neuteredOrSpade
+      userId: $userId
       name: $name
       age: $age
       gender: $gender
       description: $description
     ) {
       _id
+      userId
       name
       age
       gender
@@ -181,9 +187,15 @@ export const DELETE_DOG = gql`
 `;
 
 export const ADD_EVENT = gql`
-  mutation Mutation($date: String!, $time: String!, $location: String!) {
-    addEvent(date: $date, time: $time, location: $location) {
+  mutation Mutation(
+    $userId: ID!
+    $date: String!
+    $time: String!
+    $location: String!
+  ) {
+    addEvent(userId: $userId, date: $date, time: $time, location: $location) {
       _id
+      userId
       date
       time
       location
@@ -192,9 +204,20 @@ export const ADD_EVENT = gql`
 `;
 
 export const UPDATE_EVENT = gql`
-  mutation Mutation($date: String, $time: String, $location: String) {
-    updateEvent(date: $date, time: $time, location: $location) {
+  mutation Mutation(
+    $userId: ID!
+    $date: String
+    $time: String
+    $location: String
+  ) {
+    updateEvent(
+      userId: $userId
+      date: $date
+      time: $time
+      location: $location
+    ) {
       _id
+      userId
       date
       time
       location
@@ -203,9 +226,20 @@ export const UPDATE_EVENT = gql`
 `;
 
 export const DELETE_EVENT = gql`
-  mutation Mutation($date: String, $time: String, $location: String) {
-    deleteEvent(date: $date, time: $time, location: $location) {
+  mutation Mutation(
+    $userId: ID
+    $date: String
+    $time: String
+    $location: String
+  ) {
+    deleteEvent(
+      userId: $UserId
+      date: $date
+      time: $time
+      location: $location
+    ) {
       _id
+      userId
       date
       time
       location

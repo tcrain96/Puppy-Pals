@@ -12,7 +12,6 @@ export const GET_USERS = gql`
         age
         gender
         description
-        neuteredOrSpayed
       }
       events {
         _id
@@ -25,8 +24,8 @@ export const GET_USERS = gql`
 `;
 
 export const GET_USER = gql`
-  query Query($username: String!) {
-    user(username: $username) {
+  query Query($id: ID!) {
+    user(_id: $id) {
       _id
       username
       email
@@ -36,7 +35,6 @@ export const GET_USER = gql`
         age
         gender
         description
-        neuteredOrSpayed
       }
       events {
         _id
@@ -52,11 +50,11 @@ export const GET_DOGS = gql`
   query Query {
     dogs {
       _id
+      userId
       name
       age
       gender
       description
-      neuteredOrSpayed
     }
   }
 `;
@@ -65,11 +63,11 @@ export const GET_DOG = gql`
   query Query($id: ID!) {
     dog(_id: $id) {
       _id
+      userId
       name
       age
       gender
       description
-      neuteredOrSpayed
     }
   }
 `;
@@ -78,6 +76,7 @@ export const GET_EVENTS = gql`
   query Query {
     events {
       _id
+      userId
       date
       time
       location
@@ -89,6 +88,7 @@ export const GET_EVENT = gql`
   query Query($id: ID!) {
     event(_id: $id) {
       _id
+      userId
       date
       time
       location
@@ -108,7 +108,6 @@ export const QUERY_ME = gql`
         age
         gender
         description
-        neuteredOrSpayed
       }
       events {
         _id

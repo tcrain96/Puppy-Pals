@@ -12,11 +12,10 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  let profileLink = null;
+  let profileLink = "";
   const { data: userData } = useQuery(QUERY_ME_BASIC);
   if (userData) {
     profileLink = "/profile/" + userData.me.username;
-    console.log(profileLink);
   }
 
   return (

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import EventList from "../components/EventList";
 
-import Auth from "../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
-import { GET_EVENTS } from "../utils/queries";
+import { GET_EVENTS, QUERY_ME_BASIC } from "../utils/queries";
 import { ADD_EVENT } from "../utils/mutations";
 import "./css/Dashboard.css";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(GET_EVENTS);
+  const { data: userData } = useQuery(QUERY_ME_BASIC);
+
   const events = data?.events || [];
 
   const [addEvent, { error }] = useMutation(ADD_EVENT);
@@ -26,9 +27,7 @@ const Dashboard = () => {
       ...formState,
       [name]: value,
     });
-    console.log(formState);
   };
-
   const handleClickEvent = (event) => {
     if (event.target.className === "add-event-button") {
       event.target.style.display = "none";
@@ -42,7 +41,10 @@ const Dashboard = () => {
   const handleFormSubmit = async (event) => {
     try {
       await addEvent({
-        variables: { ...formState },
+        variables: {
+          userId: userData.me._id,
+          ...formState,
+        },
       });
     } catch (e) {
       console.error(e);
