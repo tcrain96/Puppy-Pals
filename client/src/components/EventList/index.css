@@ -1,13 +1,41 @@
 .event-list-section {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 75%;
+  margin: 50px 0px;
 }
 .event-list-section article {
-  background-color: #8d99ae;
+  background-color: #2b2d42;
   color: white;
   margin: 10px 10px;
   padding: 20px;
-  flex: 0 25%;
+  flex: 0 45%;
   border-radius: 20px;
+}
+
+.event-list-section {
+  text-align: center;
+}
+
+.event-list-section h2 {
+  font-size: 35px;
+}
+
+.event-list-section h3 {
+  font-size: 25px;
+  background-color: #ffa95d;
+  padding: 10px;
+  color: #2b2d42;
+}
+
+.event-list-section p {
+  font-size: 25px;
+  background-color: #edf2f4;
+  padding: 10px;
+  color: #2b2d42;
+}
+
+.event-list-section span {
+  font-weight: bold;
 }

@@ -16,9 +16,16 @@ const EventList = ({ events }) => {
           .map((event) => (
             <article key={event._id}>
               <UserData userId={event.userId} />
-              <p>{event.date}</p>
-              <p>{event.time}</p>
-              <p>{event.location}</p>
+              <h3>Details</h3>
+              <p>
+                <span>Date:</span> {event.date}
+              </p>
+              <p>
+                <span>Time:</span> {event.time}
+              </p>
+              <p>
+                <span>Location:</span> {event.location}
+              </p>
             </article>
           ))
           .reverse()}

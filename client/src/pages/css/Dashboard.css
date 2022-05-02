@@ -19,12 +19,15 @@
   padding: 40px;
   margin-top: 75px;
   color: white;
-  width: 50%;
+  width: 60%;
   border-radius: 20px;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .add-event-button:hover {
-  background-color: #44af69;
+  background-color: #ffa95d;
+  color: #2b2d42;
   cursor: pointer;
 }
 
@@ -43,6 +46,6 @@
 }
 .add-event-buttons button:hover,
 .add-event-buttons p:hover {
-  background-color: #44af69;
+  background-color: #ffa95d;
   cursor: pointer;
 }

@@ -22,7 +22,7 @@
 .form-input:focus,
 .form-input:hover {
   outline: none;
-  border: 3px solid #44af69;
+  border: 3px solid #ffa95d;
 }
 
 .logo {
@@ -46,6 +46,6 @@
 }
 .login-buttons button:hover,
 .login-buttons p:hover {
-  background-color: #44af69;
+  background-color: #ffa95d;
   cursor: pointer;
 }

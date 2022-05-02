@@ -34,7 +34,7 @@ const Header = () => {
               <p>Profile</p>
             </Link>
             <a href="/login" onClick={logout}>
-              Logout
+              <p>Logout</p>
             </a>
           </>
         ) : (
@@ -46,7 +46,7 @@ const Header = () => {
               <p>Profile</p>
             </Link>
             <a href="/login" onClick={logout}>
-              Logout
+              <p>Logout</p>
             </a>
           </>
         )}
