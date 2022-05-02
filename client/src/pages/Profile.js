@@ -1,64 +1,70 @@
 import React from "react";
 
-import { Redirect, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 
-import EventList from "../components/EventList";
-
-import { GET_USER, QUERY_ME} from "../utils/queries";
-import { GET_DOG, QUERRY_ME } from "../utils/queries";
-import Auth from "../utils/auth";
-import { ADD_EVENT } from "../utils/mutations";
+import { QUERY_ME } from "../utils/queries";
+import "./css/Profile.css";
+import { DELETE_DOG } from "../utils/mutations";
 
 const Profile = () => {
-  const { username: userParam } = useParams();
+  const { loading, data } = useQuery(QUERY_ME);
+  const [deleteDog, { error }] = useMutation(DELETE_DOG);
 
-  
-  const { loading, data } = useQuery(userParam ? GET_USER : QUERY_ME, {
-    variables: { username: userParam},
-  });
-
-  const user = data?.me || data?.user || data?.dog || {};
-
-
-
-
-
-  // const {id: useParams} = useParams();
-
-
-
-  // const id = data?.me || data?.id || {};
-
-
-
-
-
+  const deleteDogEvent = async (dogId) => {
+    try {
+      await deleteDog({
+        variables: {
+          _id: dogId,
+        },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
-    <div>
-      <div>I am the profile page!</div>
-
-      <div>
-        <h2>Viewing {userParam ? `${user.username}'s` : "your"} profile.</h2>
-        {/* <h2>Dog: {userParam ? `${dog.name}` : "lol" }</h2> */}
-
-        {userParam && <button>Add Event</button>}
-      </div>
-
-
-
-       <div>
-
-      
-
-      </div>
-
-
-    </div>
-
- 
-
-
+    <section>
+      {data && (
+        <article className="profile-section">
+          <div>
+            <h2>{data.me.username}</h2>
+            <p className="email">{data.me.email}</p>
+          </div>
+          <div>
+            {data.me.dogs.length > 0 && <h2>My Dogs</h2>}
+            {data.me.dogs.length > 0 &&
+              data.me.dogs.map((dog) => (
+                <article key={dog._id}>
+                  <h2>{dog.name}</h2>
+                  <p>{dog.age}</p>
+                  <p>{dog.gender}</p>
+                  <p>{dog.description}</p>
+                  <article className="profile-buttons"></article>
+                </article>
+              ))}
+          </div>
+          <div>
+            {data.me.events.length > 0 && <h2>My Events</h2>}
+            {data.me.events.length > 0 &&
+              data.me.events.map((event) => (
+                <article key={event._id}>
+                  <p>
+                    <span>Date: </span>
+                    {event.date}
+                  </p>
+                  <p>
+                    <span>Time: </span>
+                    {event.time}
+                  </p>
+                  <p>
+                    <span>Location: </span>
+                    {event.location}
+                  </p>
+                </article>
+              ))}
+          </div>
+        </article>
+      )}
+    </section>
   );
 };
 

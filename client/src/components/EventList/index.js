@@ -1,7 +1,5 @@
 import React from "react";
 import "./index.css";
-import { useQuery } from "@apollo/client";
-import { GET_USER } from "../../utils/queries";
 import UserData from "../UserData";
 
 const EventList = ({ events }) => {

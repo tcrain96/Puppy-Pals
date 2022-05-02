@@ -64,6 +64,7 @@ const typeDefs = gql`
       description: String
     ): Dog
     deleteDog(
+      _id: ID
       userId: ID
       name: String
       age: String

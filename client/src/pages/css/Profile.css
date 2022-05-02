@@ -1,0 +1,50 @@
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 50px 0px;
+}
+
+.profile-section div {
+  margin: 25px 0px;
+  padding: 20px;
+  width: 60%;
+  border-radius: 20px;
+  background-color: #2b2d42;
+}
+
+.profile-section div article,
+.profile-section .email {
+  background-color: #edf2f4;
+  padding: 10px;
+  margin: 10px;
+}
+
+.profile-section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #2b2d42;
+  background-color: #ffa95d;
+  padding: 10px;
+}
+
+.profile-section span {
+  font-weight: bold;
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: center;
+}
+.profile-buttons p {
+  margin: 10px;
+  padding: 15px;
+  color: #edf2f4;
+  background-color: #2b2d42;
+}
+.profile-buttons p:hover {
+  background-color: #ffa95d;
+  color: #2b2d42;
+  cursor: pointer;
+}

@@ -136,7 +136,7 @@ export const ADD_DOG = gql`
 
 export const UPDATE_DOG = gql`
   mutation Mutation(
-    $userId: ID!
+    $userId: ID
     $name: String
     $age: String
     $gender: String
@@ -162,7 +162,7 @@ export const UPDATE_DOG = gql`
 
 export const DELETE_DOG = gql`
   mutation Mutation(
-    $userId: ID!
+    $userId: ID
     $name: String
     $age: String
     $gender: String
