@@ -1,0 +1,47 @@
+.add-dog-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  margin-top: 75px;
+}
+.add-dog-form-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.add-dog-button {
+  background-color: #2b2d42;
+  text-align: center;
+  padding: 40px;
+  color: white;
+  width: 60%;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.add-dog-button:hover {
+  background-color: #ffa95d;
+  color: #2b2d42;
+  cursor: pointer;
+}
+
+.add-dog-buttons {
+  display: flex;
+  align-items: center;
+}
+.add-dog-buttons button,
+.add-dog-buttons p {
+  font-size: 20px;
+  border: none;
+  margin: 10px;
+  padding: 20px;
+  background-color: #2b2d42;
+  color: white;
+}
+.add-dog-buttons button:hover,
+.add-dog-buttons p:hover {
+  background-color: #ffa95d;
+  cursor: pointer;
+}

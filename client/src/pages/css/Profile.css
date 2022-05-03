@@ -37,14 +37,22 @@
   display: flex;
   justify-content: center;
 }
-.profile-buttons p {
+.profile-buttons button {
   margin: 10px;
   padding: 15px;
+  font-size: 20px;
   color: #edf2f4;
   background-color: #2b2d42;
+  border: none;
 }
-.profile-buttons p:hover {
+.profile-buttons button:hover {
   background-color: #ffa95d;
   color: #2b2d42;
   cursor: pointer;
+}
+.empty-dog-text,
+.empty-event-text {
+  background-color: #edf2f4;
+  padding: 15px;
+  font-size: 20px;
 }

@@ -161,27 +161,9 @@ export const UPDATE_DOG = gql`
 `;
 
 export const DELETE_DOG = gql`
-  mutation Mutation(
-    $userId: ID
-    $name: String
-    $age: String
-    $gender: String
-    $description: String
-  ) {
-    deleteDog(
-      userId: $userId
-      name: $name
-      age: $age
-      gender: $gender
-      description: $description
-    ) {
+  mutation Mutation($id: ID) {
+    deleteDog(_id: $id) {
       _id
-      userId
-      name
-      age
-      gender
-      description
-      neuteredOrSpayed
     }
   }
 `;
@@ -194,7 +176,6 @@ export const ADD_EVENT = gql`
     $location: String!
   ) {
     addEvent(userId: $userId, date: $date, time: $time, location: $location) {
-      _id
       userId
       date
       time
@@ -226,23 +207,9 @@ export const UPDATE_EVENT = gql`
 `;
 
 export const DELETE_EVENT = gql`
-  mutation Mutation(
-    $userId: ID
-    $date: String
-    $time: String
-    $location: String
-  ) {
-    deleteEvent(
-      userId: $UserId
-      date: $date
-      time: $time
-      location: $location
-    ) {
+  mutation Mutation($id: ID) {
+    deleteEvent(_id: $id) {
       _id
-      userId
-      date
-      time
-      location
     }
   }
 `;
