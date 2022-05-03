@@ -9,6 +9,7 @@ import { DELETE_DOG, DELETE_EVENT } from "../utils/mutations";
 import AddEventForm from "../components/AddEventForm";
 import AddDogForm from "../components/AddDogForm";
 import UpdateDogForm from "../components/UpdateDogForm"
+import UpdateEventForm from "../components/UpdateEventForm"
 
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -39,6 +40,13 @@ const Profile = () => {
     document.getElementById("profile-dog-info-" + dogId).style.display = "none";
     document.getElementById("profile-dog-info-form-" + dogId).style.display = "block";
   
+};
+
+const handleEventUpdateClick = (eventId) => {
+
+  document.getElementById("profile-event-info-" + eventId).style.display = "none";
+  document.getElementById("profile-event-info-form-" + eventId).style.display = "block";
+
 };
   return (
     <section>
@@ -81,7 +89,8 @@ const Profile = () => {
 
             {data.me.events.length > 0 ? (
               data.me.events.map((event) => (
-                <article key={event._id}>
+                <section key={event._id}>
+                <article id={"profile-event-info-" + event._id}>
                   <p>
                     <span>Date: </span>
                     {event.date}
@@ -98,8 +107,11 @@ const Profile = () => {
                     <form onSubmit={ () => deleteEventEvent(event._id)}>
                       <button type="submit">Remove</button>
                     </form>
+                    <p onClick={()=>handleEventUpdateClick(event._id)}>Update</p>
                   </article>
-                </article>
+                  </article>
+                <UpdateEventForm eventId={event._id}/>
+                </section>
               ))
             ) : (
               <p className="empty-event-text">

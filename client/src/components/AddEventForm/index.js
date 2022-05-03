@@ -68,6 +68,7 @@ const AddEventForm = () => {
             type="date"
             id="date"
             onChange={handleChange}
+            required="true"
           />
           <input
             className="form-input"
@@ -76,6 +77,7 @@ const AddEventForm = () => {
             type="time"
             id="time"
             onChange={handleChange}
+            required="true"
           />
           <input
             className="form-input"
@@ -84,6 +86,7 @@ const AddEventForm = () => {
             type="text"
             id="location"
             onChange={handleChange}
+            required="true"
           />
         </article>
 

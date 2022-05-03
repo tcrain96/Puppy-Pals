@@ -187,12 +187,14 @@ export const ADD_EVENT = gql`
 
 export const UPDATE_EVENT = gql`
   mutation Mutation(
-    $userId: ID!
+    $id:ID
+    $userId: ID
     $date: String
     $time: String
     $location: String
   ) {
     updateEvent(
+      _id:$id
       userId: $userId
       date: $date
       time: $time

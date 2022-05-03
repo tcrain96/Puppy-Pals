@@ -26,6 +26,7 @@ const UpdateDogForm = ({dogId}) => {
     const handleClickEvent = () => {
           document.querySelector("#profile-dog-info-" + dogId).style.display = "block";
           document.querySelector("#profile-dog-info-form-" + dogId).style.display = "none";
+          document.querySelector("#update-dog-form-element" + dogId).reset();
       };
 
       const handleFormSubmit = async (event) => {
@@ -43,7 +44,8 @@ const UpdateDogForm = ({dogId}) => {
 
         document.querySelector("#profile-dog-info-" + dogId).style.display = "block";
         document.querySelector("#profile-dog-info-form-" + dogId).style.display = "none";
-    
+        document.querySelector("#update-dog-form-element" + dogId).reset();
+        
         setFormState({
           name: "",
           age: "",
@@ -57,6 +59,7 @@ const UpdateDogForm = ({dogId}) => {
       <form
       onSubmit={handleFormSubmit}
         className="update-dog-form"
+        id={"update-dog-form-element"+dogId}
       >
         <article>
           <input

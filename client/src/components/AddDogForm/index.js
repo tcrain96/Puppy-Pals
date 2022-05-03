@@ -70,6 +70,7 @@ const AddDogForm = () => {
             type="input"
             id="name"
             onChange={handleChange}
+            required="true"
           />
           <input
             className="form-input"
@@ -78,6 +79,7 @@ const AddDogForm = () => {
             type="input"
             id="age"
             onChange={handleChange}
+            required="true"
           />
           <input
             className="form-input"
@@ -86,6 +88,7 @@ const AddDogForm = () => {
             type="input"
             id="gender"
             onChange={handleChange}
+            required="true"
           />
           <input
             className="form-input"
@@ -94,6 +97,7 @@ const AddDogForm = () => {
             type="input"
             id="description"
             onChange={handleChange}
+            required="true"
           />
         </article>
 
