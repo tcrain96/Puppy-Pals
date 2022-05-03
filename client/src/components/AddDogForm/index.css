@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 100px;
-  margin-top: 75px;
+  
 }
 .add-dog-form-section {
   display: flex;
@@ -13,9 +13,10 @@
 .add-dog-button {
   background-color: #2b2d42;
   text-align: center;
+  margin-top: 75px;
   padding: 40px;
   color: white;
-  width: 60%;
+  width: 50%;
   border-radius: 20px;
   font-weight: bold;
   font-size: 25px;

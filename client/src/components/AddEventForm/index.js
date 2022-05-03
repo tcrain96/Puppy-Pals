@@ -21,6 +21,7 @@ const AddEventForm = () => {
       [name]: value,
     });
   };
+  
   const handleClickEvent = (event) => {
     if (event.target.className === "add-event-button") {
       event.target.style.display = "none";

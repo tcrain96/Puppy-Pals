@@ -57,6 +57,7 @@ const typeDefs = gql`
       description: String!
     ): Dog
     updateDog(
+      _id:ID
       userId: ID
       name: String
       age: String

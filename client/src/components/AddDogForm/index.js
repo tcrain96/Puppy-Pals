@@ -33,7 +33,7 @@ const AddDogForm = () => {
     }
   };
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = async () => {
     try {
       await addDog({
         variables: {

@@ -136,14 +136,15 @@ export const ADD_DOG = gql`
 
 export const UPDATE_DOG = gql`
   mutation Mutation(
+    $id: ID
     $userId: ID
     $name: String
     $age: String
     $gender: String
-    $neuteredOrSpade: Boolean
     $description: String
   ) {
     updateDog(
+      _id:$id
       userId: $userId
       name: $name
       age: $age
