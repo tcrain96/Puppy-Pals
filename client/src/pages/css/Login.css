@@ -50,3 +50,9 @@
   background-color: #ffa95d;
   cursor: pointer;
 }
+
+.cnfrm {
+  /* background-color: red; */
+  font-weight:bolder;
+  color: red;
+}

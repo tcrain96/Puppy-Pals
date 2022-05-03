@@ -12,6 +12,17 @@ const Signup = () => {
     email: "",
     password: "",
   });
+
+const [confirmformState, confirmsetFormState] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const [isError, setIsError] = useState("");
+
+
+
   const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
@@ -38,6 +49,22 @@ const Signup = () => {
       console.error(e);
     }
   };
+
+  // Password Validation
+
+  const checkValidation=(e)=>{
+    const confPass = e.target.value;
+    confirmsetFormState(confPass);
+    if (formState.password != confPass) {
+      setIsError("Confirm Password Does Not Match!");
+    
+    }else{
+      setIsError("");
+    }
+
+
+    };
+
 
   return (
     <main>
@@ -73,6 +100,23 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
+
+            <div className="cnfrm">
+              {isError}
+            </div>
+
+            <input
+              className="form-input"
+              placeholder="Confirm Password"
+              name="confirmpassword"
+              type="password"
+              id="confirmpassword"
+              value={confirmformState.password}
+              onChange={(e)=>checkValidation(e)}
+            />
+
+
+
             </article>
             <article className="login-buttons">
               <button type="submit">Register</button>
@@ -81,6 +125,8 @@ const Signup = () => {
               </Link>
             </article>
           </form>
+          <div>
+          </div>
         </div>
         {error && <div>Signup failed</div>}
       </div>

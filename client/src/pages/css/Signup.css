@@ -49,3 +49,76 @@
   background-color: #ffa95d;
   cursor: pointer;
 }
+
+/* Password Validation */
+
+.cnfrm {
+  /* background-color: red; */
+  font-weight:bolder;
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* tEST */
+
+
+
+
+/* label{
+font-weight: 500;
+color: #101030;
+}
+input{
+display: block;
+width: 100%;
+margin-top: 5px;
+padding: 12px;
+border-radius: 5px;
+outline: none;
+color: #101010;
+}
+#password{
+margin-bottom: 30px;
+}
+input[type="password"]{
+border: 2px solid #c2c2c2;
+}
+input[type="button"]{
+background-color: #7f3fff;
+border: none;
+color: #ffffff;
+font-weight: 500;
+font-size: 18px;
+letter-spacing: 1px;
+cursor: pointer;
+margin-top: 20px;
+}
+p{
+font-size: 14px;
+margin: 15px 0;
+display: inline-block;
+color: #ffffff;
+} */

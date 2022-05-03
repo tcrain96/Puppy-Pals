@@ -10,6 +10,13 @@ const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
 
+  const [confirmformState, confirmsetFormState] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [isError, setIsError] = useState("");
+
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,6 +48,24 @@ const Login = (props) => {
     });
   };
 
+    // Password Validation
+
+    const checkValidation=(e)=>{
+    const confPass = e.target.value;
+      confirmsetFormState(confPass);
+        if (formState.password != confPass) {
+          setIsError("Confirm Password Does Not Match!");
+  
+        }else{
+          setIsError("");
+  }
+
+
+  };
+
+
+  
+
   return (
     <main>
       <div className="content">
@@ -65,6 +90,20 @@ const Login = (props) => {
               value={formState.password}
               onChange={handleChange}
             />
+            <div className="cnfrm">
+              {isError}
+            </div>
+
+            <input
+              className="form-input"
+              placeholder="Confirm Password"
+              name="confirmpassword"
+              type="password"
+              id="confirmpassword"
+              value={confirmformState.password}
+              onChange={(e)=>checkValidation(e)}
+              />
+
           </article>
 
           <article className="login-buttons">
