@@ -57,23 +57,17 @@ const typeDefs = gql`
       description: String!
     ): Dog
     updateDog(
+      _id:ID
       userId: ID
       name: String
       age: String
       gender: String
       description: String
     ): Dog
-    deleteDog(
-      _id: ID
-      userId: ID
-      name: String
-      age: String
-      gender: String
-      description: String
-    ): Dog
+    deleteDog(_id: ID): Dog
     addEvent(userId: ID, date: String!, time: String!, location: String!): Event
-    updateEvent(userId: ID, date: String, time: String, location: String): Event
-    deleteEvent(userId: ID, date: String, time: String, location: String): Event
+    updateEvent(_id:ID, userId: ID, date: String, time: String, location: String): Event
+    deleteEvent(_id: ID): Event
   }
 `;
 
