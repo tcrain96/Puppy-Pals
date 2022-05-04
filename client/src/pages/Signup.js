@@ -13,15 +13,13 @@ const Signup = () => {
     password: "",
   });
 
-const [confirmformState, confirmsetFormState] = useState({
+  const [confirmformState, confirmsetFormState] = useState({
     username: "",
     email: "",
     password: "",
   });
 
   const [isError, setIsError] = useState("");
-
-
 
   const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -52,19 +50,15 @@ const [confirmformState, confirmsetFormState] = useState({
 
   // Password Validation
 
-  const checkValidation=(e)=>{
+  const checkValidation = (e) => {
     const confPass = e.target.value;
     confirmsetFormState(confPass);
-    if (formState.password != confPass) {
+    if (formState.password !== confPass) {
       setIsError("Confirm Password Does Not Match!");
-    
-    }else{
+    } else {
       setIsError("");
     }
-
-
-    };
-
+  };
 
   return (
     <main>
@@ -101,22 +95,17 @@ const [confirmformState, confirmsetFormState] = useState({
                 onChange={handleChange}
               />
 
-            <div className="cnfrm">
-              {isError}
-            </div>
+              <div className="cnfrm">{isError}</div>
 
-            <input
-              className="form-input"
-              placeholder="Confirm Password"
-              name="confirmpassword"
-              type="password"
-              id="confirmpassword"
-              value={confirmformState.password}
-              onChange={(e)=>checkValidation(e)}
-            />
-
-
-
+              <input
+                className="form-input"
+                placeholder="Confirm Password"
+                name="confirmpassword"
+                type="password"
+                id="confirmpassword"
+                value={confirmformState.password}
+                onChange={(e) => checkValidation(e)}
+              />
             </article>
             <article className="login-buttons">
               <button type="submit">Register</button>
@@ -125,8 +114,7 @@ const [confirmformState, confirmsetFormState] = useState({
               </Link>
             </article>
           </form>
-          <div>
-          </div>
+          <div></div>
         </div>
         {error && <div>Signup failed</div>}
       </div>

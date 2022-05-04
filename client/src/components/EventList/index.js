@@ -4,7 +4,7 @@ import UserData from "../UserData";
 
 const EventList = ({ events }) => {
   if (!events.length) {
-    return <h3>No Events Yet</h3>;
+    return <h3 className="no-event-yet">No Events Yet</h3>;
   }
 
   return (

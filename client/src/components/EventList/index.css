@@ -40,6 +40,12 @@
   font-weight: bold;
 }
 
+.no-event-yet {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 300px 0px;
+}
+
 @media screen and (max-width: 1200px) {
   .event-list-section {
     width: 100%;

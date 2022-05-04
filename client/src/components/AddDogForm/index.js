@@ -4,7 +4,7 @@ import { QUERY_ME_BASIC } from "../../utils/queries";
 import { ADD_DOG } from "../../utils/mutations";
 import "./index.css";
 const AddDogForm = () => {
-  const [addDog, { error }] = useMutation(ADD_DOG);
+  const [addDog] = useMutation(ADD_DOG);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
 
   const [formState, setFormState] = useState({
