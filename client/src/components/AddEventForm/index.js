@@ -99,7 +99,7 @@ const AddEventForm = () => {
       </form>
 
       <p className="add-event-button" onClick={handleClickEvent}>
-        Add Event
+        Add Event 📅
       </p>
     </section>
   );

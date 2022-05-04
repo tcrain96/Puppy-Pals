@@ -110,7 +110,7 @@ const AddDogForm = () => {
       </form>
 
       <p className="add-dog-button" onClick={handleClickEvent}>
-        Add Dog
+        Add Dog 🐶
       </p>
     </section>
   );
