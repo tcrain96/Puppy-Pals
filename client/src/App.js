@@ -56,7 +56,7 @@ function App() {
                 <Route exact path="/login" component={Dashboard} />
                 <Route exact path="/signup" component={Dashboard} />
                 <Route exact path="/profile/:username?" component={Profile} />
-                <Route exact path="/profile/:name?" component={Profile}/>
+                <Route exact path="/profile/:name?" component={Profile} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="*" component={NoMatch} />
               </Switch>
