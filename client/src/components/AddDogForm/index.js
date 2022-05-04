@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME_BASIC } from "../../utils/queries";
 import { ADD_DOG } from "../../utils/mutations";
@@ -33,7 +34,8 @@ const AddDogForm = () => {
     }
   };
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     try {
       await addDog({
         variables: {
@@ -53,6 +55,7 @@ const AddDogForm = () => {
       gender: "",
       description: "",
     });
+    window.location.reload();
   };
 
   return (
