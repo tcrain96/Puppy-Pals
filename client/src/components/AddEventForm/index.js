@@ -4,7 +4,7 @@ import { QUERY_ME_BASIC } from "../../utils/queries";
 import { ADD_EVENT } from "../../utils/mutations";
 import "./index.css";
 const AddEventForm = () => {
-  const [addEvent, { error }] = useMutation(ADD_EVENT);
+  const [addEvent] = useMutation(ADD_EVENT);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
 
   const [formState, setFormState] = useState({
@@ -21,7 +21,7 @@ const AddEventForm = () => {
       [name]: value,
     });
   };
-  
+
   const handleClickEvent = (event) => {
     if (event.target.className === "add-event-button") {
       event.target.style.display = "none";

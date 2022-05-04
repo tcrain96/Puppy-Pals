@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
-  
+  padding: 25px;
 }
 .add-dog-form-section {
   display: flex;
   justify-content: center;
   width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }
 .add-dog-button {
   background-color: #2b2d42;
@@ -45,4 +46,12 @@
 .add-dog-buttons p:hover {
   background-color: #ffa95d;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .add-dog-button {
+    margin-top: 75px;
+    padding: 40px;
+    width: 70%;
+  }
 }

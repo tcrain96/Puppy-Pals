@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 50px 0px;
+  margin: 25px 0px;
 }
 
 .profile-section div {
@@ -57,4 +57,10 @@
   background-color: #edf2f4;
   padding: 15px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .profile-section div {
+    width: 75%;
+  }
 }

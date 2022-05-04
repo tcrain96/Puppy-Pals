@@ -1,10 +1,10 @@
-.update-dog-form .update-buttons{
-    display: flex;
+.update-dog-form .update-buttons {
+  display: flex;
   justify-content: center;
 }
 .update-dog-form .update-buttons button,
 .update-dog-form .update-buttons p {
-    margin: 10px;
+  margin: 10px;
   padding: 15px;
   font-size: 20px;
   color: #edf2f4;
@@ -13,7 +13,7 @@
 }
 
 .update-dog-form .update-buttons button:hover,
-.update-dog-form .update-buttons p:hover  {
+.update-dog-form .update-buttons p:hover {
   background-color: #ffa95d;
   color: #2b2d42;
   cursor: pointer;
