@@ -4,7 +4,7 @@
 
 ## Description
 
-A MERN, full CRUD application that is designed to allow dog owners to plan events to meet other dog
+A full CRUD, MERN application that enables dog owners to plan events with their dogs with the intention of connecting with other dog owners.
 
 ## Table of Contents
 
