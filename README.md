@@ -2,6 +2,8 @@
 
 [Puppy Pals Live URL](https://puppy-pals.herokuapp.com/)
 
+![Puppy Pals Home Page](./images/Fullscreen.png?raw=true "Home - Puppy Pals")
+
 ## Description
 
 A full CRUD, MERN application that enables dog owners to plan events with their dogs with the intention of connecting with other dog owners.
