@@ -1,6 +1,8 @@
 # Puppy Pals
 
-[Puppy Pals Live URL](https://secret-wave-15464.herokuapp.com/)
+[Puppy Pals Live URL](https://puppy-pals.herokuapp.com/)
+
+![Puppy Pals Home Page](./images/Fullscreen.png?raw=true "Home - Puppy Pals")
 
 ## Description
 
